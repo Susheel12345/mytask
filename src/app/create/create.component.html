@@ -1,0 +1,28 @@
+<SEction>
+    <nz-card style="width:inherit;background-color: lightblue;height: max-content;"  nzTitle="Life is Beautiful and make it sweetful !!!!!!" >
+    <div nz-row>
+        <div nz-col nzSpan="12" nzOffset="6">
+         <h1 style="color:seagreen;"><i nz-icon [nzType]="'user-add'"></i> Add Contacts</h1> 
+        </div>
+      </div>
+<form class="example-input" nz-form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="Name"><i nz-icon [nzType]="'user'"></i> Name</nz-form-label> 
+        <input type="text" name="name" id="name"  nz-input placeholder="Enter your name"  nzSize="small" formControlName="Name">
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="Email"><i nz-icon [nzType]="'mail'"></i> Email</nz-form-label> 
+        <input type="text" name="name" id="name"  nz-input placeholder="Enter your Email" nzSize="small" formControlName="Email">
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="Phone"><i nz-icon [nzType]="'phone'"></i> Phone</nz-form-label> 
+        <input type="text" name="name" id="name"  nz-input placeholder="Enter your Phonenumber" nzSize="small" formControlName="Phnumber">
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button type="submit" [disabled]="!form.valid" nz-button nzType="Primary"><i nz-icon [nzType]="'save'"></i> Save</button>
+        </nz-form-control>
+      </nz-form-item>
+</form>
+</nz-card>
+</SEction>

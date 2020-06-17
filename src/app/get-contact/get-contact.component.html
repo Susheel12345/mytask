@@ -1,0 +1,28 @@
+<div nz-row>
+    <div nz-col nzSpan="12" nzOffset="6">
+     <h1 style="color:darkslategray; "> <i nz-icon [nzType]="'contacts'"></i>Contacts</h1> 
+    </div>
+  </div>
+<nz-table #basicTable style="color:lightskyblue " >
+    <thead style="color:lightskyblue ">
+    <tr style="color:lightskyblue ">
+       
+        <th><i nz-icon [nzType]="'user'"></i> Name</th>
+        <th><i nz-icon [nzType]="'mail'"></i> Email</th>
+        <th><i nz-icon [nzType]="'phone'"></i> Phnumber</th>
+        <th colspan="2"><i nz-icon [nzType]="'arrow-down'"></i> Actions</th>
+    </tr>
+    </thead>
+  
+     <tbody style="color:mediumslateblue "  >
+        <tr *ngFor="let contact of contacts" style="color:mediumslateblue ">
+           
+            <td style="color:black;"><i nz-icon [nzType]="'user'"></i> {{ contact.Name }}</td>
+            <td style="color:black;"><i nz-icon [nzType]="'mail'"></i>  {{contact.Email }}</td>
+            <td style="color:black;"><i nz-icon [nzType]="'mobile'"></i> {{ contact.Phnumber }}</td> 
+            <td><button    [routerLink]="['/edit', contact._id]" routerLinkActive="active" nz-button nzType="primary" ><i nz-icon [nzType]="'edit'"></i>Edit</button></td>
+            <td> <button   (click)="onDelete(contact._id)" nz-button nzDanger="Primary"><i nz-icon [nzType]="'delete'"></i> Delete</button></td>
+       </tr>
+    </tbody> 
+</nz-table>
+  
